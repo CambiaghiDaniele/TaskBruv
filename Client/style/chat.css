@@ -1,0 +1,26 @@
+body{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    padding: 10vh;
+}
+#chatlist{
+    display: flex;
+    flex: 1;
+    justify-content: left;
+    align-items:flex-start;
+    flex-direction: column;
+    flex-wrap: nowrap;
+
+}
+#chat{
+    display: flex;
+    flex: 4;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+#addchat{
+    display: flex;
+}
