@@ -1,0 +1,11 @@
+{
+    "configurations": [
+    {
+        "name": "Launch Chrome",
+        "request": "launch",
+        "type": "chrome",
+        "url": "X:\\Users\\scarsella.kay\\Desktop\\TaskBruv\\frontend\\structure",
+        "webRoot": "${workspaceFolder}"
+    }
+    ]
+}
