@@ -32,11 +32,11 @@ body {
     border-top-right-radius: 45%;
     border-bottom-left-radius: 35%;
     border-bottom-right-radius: 40%;
-    z-index: -1;
+    z-index: 1;
   }
   .login::before {
-    left: 40%;
-    bottom: -130%;
+    left: 35%;
+    bottom: -135%;
     background-color: rgba(69, 105, 144, 0.15);
     -webkit-animation: wawes 10s infinite linear;
     -moz-animation: wawes 10s infinite linear;
@@ -44,7 +44,7 @@ body {
   }
   .login::after {
     left: 35%;
-    bottom: -125%;
+    bottom: -100%;
     background-color: rgba(2, 128, 144, 0.2);
     -webkit-animation: wawes 10s infinite;
     -moz-animation: wawes 10s infinite;
@@ -85,7 +85,13 @@ body {
     background-color: #f24353;
   }
   #register{
-    box-shadow: rgba(2, 128, 144, 0.2);
+    font-size: 20px;
+    color: white;
+    text-shadow: 5px 10px 10px rgba(2, 128, 144, 0.2);
+    z-index: 2;
+  }
+  #register:hover{ 
+    text-decoration: underline;
   }
   
   @-webkit-keyframes wawes {

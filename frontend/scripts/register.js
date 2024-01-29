@@ -28,5 +28,16 @@ function login() {
             return false;
         }
     }
+    $.ajax({
+        url: '../../backend/send.php',
+        type: 'POST',
+        data: { email: email.value ,username: username.value, password: password.value},
+        success: function(risposta) {
+            console.log(risposta);
+        },
+        error: function() {
+            console.log('Si è verificato un errore durante la richiesta AJAX');
+        }
+    });
     location.href = 'index.html';
 }
