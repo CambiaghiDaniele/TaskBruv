@@ -37,7 +37,7 @@ function login() {
         },
         error: function() {
             console.log('Si è verificato un errore durante la richiesta AJAX');
+            location.href = 'index.html';
         }
     });
-    location.href = 'index.html';
 }
