@@ -28,10 +28,15 @@ function login() {
             return false;
         }
     }
+    var utente = {
+        email: email.value,
+        username: username.value,
+        password: password.value
+    };
     $.ajax({
         url: '../../backend/send.php',
         type: 'POST',
-        data: { email: email.value ,username: username.value, password: password.value},
+        data: { utente: utente},
         success: function(risposta) {
             console.log(risposta);
         },
