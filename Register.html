@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Register</title>
+	<link rel="stylesheet" href="styles/login.css" />
+	<link rel="stylesheet" href="style/utility/sidebar_menu.css" />
+	<link rel="stylesheet" type="text/css" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+	<script src="scripts/utility/initsidebar.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</form>
+</head>
+	<body>
+		<div class="login">
+			<input type="text" placeholder="inserisci l'email" id="email">
+			<input type="text" placeholder="inserisci il nome utente" id="username">
+			<input type="password" placeholder="inserisci la password" id="password">
+			<label id="messagelabel" style="display: none;">conferma password </label>
+			<input type="password" placeholder="conferma password" id="password2">
+			<button onclick="login()" id="btnRegister">register</button>
+			<a href="login.html" id="register">Login</a>
+		</div>
+	</body>
+	<script src="scripts/register.js"></script>
+</html>
