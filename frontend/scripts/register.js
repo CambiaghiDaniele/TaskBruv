@@ -36,7 +36,7 @@ function login() {
     $.ajax({
         url: '../../backend/send.php',
         type: 'POST',
-        data: {UTENTE: utente},
+        data: { utente: utente},
         success: function(risposta) {
             console.log(risposta);
         },
