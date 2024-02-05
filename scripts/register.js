@@ -28,10 +28,15 @@ function login() {
             return false;
         }
     }
+    var utente = {
+        email: email.value,
+        username: username.value,
+        password: password.value
+    };
     $.ajax({
-        url: 'http://chioda.pietro.tave.osdb.it/PHP/send.php',
+        url: 'http://localhost/TaskBruv/PHP/send.php',
         type: 'POST',
-        data: { email: email.value ,username: username.value, password: password.value},
+        data: { utente: utente},
         success: function(risposta) {
             console.log(risposta);
         },
