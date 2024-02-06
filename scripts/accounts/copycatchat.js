@@ -3,8 +3,8 @@ let talker;
 
 document.addEventListener("DOMContentLoaded", function(){
     const discussions = Array.from(document.querySelectorAll(".chat"));
-    console.log(postRequest("http://localhost:8080/backend/fetchchats.php",{mail: "gino@gmail.com"}));
-    console.log(discussions);
+// console.log(postRequest("http://localhost:8080/backend/fetchchats.php",{mail: "gino@gmail.com"}));
+// console.log(discussions);
    discussions.map((chat)=>chat.addEventListener("click",()=>{
     
     discussions.filter((chat)=>chat.classList.contains("message-active")).map((chat)=>chat.classList.remove("message-active"))
