@@ -7,7 +7,7 @@ let email = document.getElementById("email");
 password2.addEventListener("input", function() {
     if (password.value !== password2.value) {
         messageLabel.style.display = 'block';
-        messageLabel.textContent = 'conferma password : Le password non coincidono';
+        messageLabel.textContent = 'Le password non coincidono';
         messageLabel.style.color = 'red';
     } else {
         messageLabel.style.display = 'block';
@@ -38,7 +38,7 @@ function login() {
         type: 'POST',
         data: { utente: utente},
         success: function(risposta) {
-            console.log(risposta);
+            alert(risposta);
         },
         error: function() {
             console.log('Si è verificato un errore durante la richiesta AJAX');
