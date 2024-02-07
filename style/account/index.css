@@ -4,38 +4,64 @@
 .basicInformations{
     width: 500px;
     height: auto;
-    background-color: rgb(115, 125, 165);
-    stroke: rgb(55, 60, 85);
-    stroke-width: 10px;
+    background: rgb(40,31,189);
+    background: radial-gradient(circle, rgba(40,31,189,1) 0%, rgba(51,110,170,1) 50%, rgba(110,119,168,1) 100%);
     display: inline-block;
     margin: 10px;
     z-index: 1;
     border-radius: 10px;
+    border-color: rgb(55, 60, 85);
+    border-image: none;
+    border-style: solid;
+    border-width: 5px;
 }
 .accountPicture{
     width: 300px;
     height: 300px;
-    border-radius: 150px;
-    stroke: black;
-    stroke-width: 10px;
+    border-radius: 50%;
     display: flex;
     justify-content: center;
-    margin: 30px;
+    margin: 25px;
+    margin-left: auto;
+    margin-right: auto;
+    border-color: rgb(55, 60, 85);
+    border-image: none;
+    border-style: solid;
+    border-width: 5px;
+    overflow: hidden;
 }
+
 .accountName{
     display: flex;
     justify-content: center;
     scale: 1.5;
     margin: 30px;
+    margin-left: auto;
+    margin-right: auto;
 }
 .detailedInformations{
     width: 1000px;
     height: auto;
-    background-color: rgb(115, 125, 165);
-    stroke: rgb(55, 60, 85);
-    stroke-width: 10px;
+    background: rgb(40,31,189);
+    background: radial-gradient(circle, rgba(40,31,189,1) 0%, rgba(51,110,170,1) 50%, rgba(110,119,168,1) 100%);
     display: inline-block;
     margin: 10px;
     z-index: 1;
     border-radius: 10px;
+    border-color: rgb(55, 60, 85);
+    border-image: none;
+    border-style: solid;
+    border-width: 5px;
 }
+
+hr.lineDivider {
+    border: none;
+    border-radius: 6px;
+    border-top: 3px solid;
+    border-color: rgba(55, 60, 85, 0.85);
+    margin: 20px;
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+
+/* used https://cssgradient.io/ very nice ☻ */
