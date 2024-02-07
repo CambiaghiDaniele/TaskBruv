@@ -4,9 +4,9 @@ header("Access-Control-Allow-Methods: POST, OPTIONS");
 header("Access-Control-Allow-Headers: Content-Type");
 header("Content-Type: application/json");
 
-$servername = "localhost";
-$username = "root";
-$password = "Pepe2005";
+$servername = "chioda.pietro.tave.osdb.it";
+$username = 'c248_chioda';
+$password = "DickDestroyer";
 $database = "taskbruv";
 
 $conn = new mysqli($servername, $username, $password, $database);
@@ -42,9 +42,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'  )   {
                 }
         
                 if ($loginSuccessful) {
-                    echo json_encode(array("message" => "Login successful"));
+                    echo json_encode(array("message" => "200"));
                 } else {
-                    echo json_encode(array("error" => "Invalid credentials"));
+                    echo json_encode(array("error" => "400"));
                 }
             }
         }else{

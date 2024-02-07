@@ -210,12 +210,18 @@ body {
 
 .chat .messages-chat {
   padding: 25px 35px;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+
 }
 
 .chat .messages-chat .message {
   display:flex;
   align-items: center;
+  margin-left: auto;
   margin-bottom: 8px;
+
 }
 
 .chat .messages-chat .message .photo {
@@ -254,9 +260,9 @@ body {
 }
 
 .response {
-  float: right;
-  margin-right: 0px !important;
-  margin-left:auto; /* flexbox alignment rule */
+  float: left;
+  margin-left: 0px !important;
+  margin-right:auto; /* flexbox alignment rule */
 }
 
 .response .text {

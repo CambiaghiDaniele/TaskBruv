@@ -3,7 +3,7 @@ async function initsidebar() {
     const body= document.querySelector("body");
   
      try {
-       const response = await fetch("http://localhost/TaskBruv/PHP/sidebar.php", {
+       const response = await fetch("https://www.taskbruv.it/PHP/sidebar.php", {
          method: "POST",
          body: JSON.stringify({}),
          headers: {
