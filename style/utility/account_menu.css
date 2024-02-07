@@ -1,0 +1,46 @@
+.accountButton{
+    position: fixed;
+    right: 20px;
+    top: 20px;
+    width: 50px;
+    height: 50px;
+    z-index: 2;
+}
+
+#imageButton{
+    position: relative;
+    text-align: center;
+    bottom: 3px;
+    right: 8.5px;
+}
+
+
+#accountBtn{
+    border-radius: 25px;
+    width: 50px;
+    height: 50px;
+}
+
+.accountMenu {
+    width: 250px;
+    height: max-content;
+    background-color: rgb(65, 140, 200);
+    position: absolute;
+    right: -100%;
+    transition: left 0.3s ease;
+    z-index: 3;
+
+    -webkit-transition: left 0.3s 0.1s ease-out;
+}
+.accountPicture{
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    padding: 20px;
+    border-radius: 25px;
+    text-align: center;
+    margin: auto;
+}
+.accountInformations{
+    display: inline-block;
+}
