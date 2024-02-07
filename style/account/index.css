@@ -1,0 +1,41 @@
+.accountDetails{
+    display: flex;
+}
+.basicInformations{
+    width: 500px;
+    height: auto;
+    background-color: rgb(115, 125, 165);
+    stroke: rgb(55, 60, 85);
+    stroke-width: 10px;
+    display: inline-block;
+    margin: 10px;
+    z-index: 1;
+    border-radius: 10px;
+}
+.accountPicture{
+    width: 300px;
+    height: 300px;
+    border-radius: 150px;
+    stroke: black;
+    stroke-width: 10px;
+    display: flex;
+    justify-content: center;
+    margin: 30px;
+}
+.accountName{
+    display: flex;
+    justify-content: center;
+    scale: 1.5;
+    margin: 30px;
+}
+.detailedInformations{
+    width: 1000px;
+    height: auto;
+    background-color: rgb(115, 125, 165);
+    stroke: rgb(55, 60, 85);
+    stroke-width: 10px;
+    display: inline-block;
+    margin: 10px;
+    z-index: 1;
+    border-radius: 10px;
+}
