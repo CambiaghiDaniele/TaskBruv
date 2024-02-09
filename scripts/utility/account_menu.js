@@ -3,6 +3,13 @@ document.addEventListener("DOMContentLoaded", () => {
     let accountMenu = document.getElementById("accountMenu");
 
     accountBtn.addEventListener("click", () => {
-        accountMenu.style.right = (accountMenu.style.width - 20) + 'px';
+        accountMenu.classList.add("slideAnimation");
+        document.addEventListener("mouseup", (e) => {
+            if (!accountMenu.contains(e.target)) {
+                accountMenu.classList.remove("slideAnimation");
+                accountMenu.classList.add("reverseSlideAnimation");
+                accountMenu.classList.remove("reverseSlideAnimation");
+            }
+        });
     });
 });

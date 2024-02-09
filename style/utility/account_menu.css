@@ -22,15 +22,34 @@
 }
 
 .accountMenu {
+    display: none;
     width: 250px;
     height: max-content;
     background-color: rgb(65, 140, 200);
     position: absolute;
     right: -100%;
-    transition: left 0.3s ease;
+    border: 5px blue;
+    border-radius: 10px;
     z-index: 3;
-
-    -webkit-transition: left 0.3s 0.1s ease-out;
+}
+.slideAnimation{
+    right: 20px;
+    display: inline-block;
+    animation-name: accountMenuSlide;
+    animation-duration: 250ms;
+    animation-timing-function: ease-out;
+}
+.reverseSlideAnimation{
+    right: -100%;
+    display: none;
+    animation-name: accountMenuSlide;
+    animation-duration: 250ms;
+    animation-timing-function: ease-in;
+    animation-direction: reverse;
+}
+@keyframes accountMenuSlide{
+    from {right: -100%;}
+    to {right: 20px;}
 }
 .accountPicture{
     display: inline-block;
