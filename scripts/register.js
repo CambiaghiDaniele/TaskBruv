@@ -34,7 +34,7 @@ function login() {
         password: password.value
     };
     $.ajax({
-        url: 'http://localhost/TaskBruv/PHP/send.php',
+        url: 'https://www.taskbruv.it/PHP/send.php',
         type: 'POST',
         data: { utente: utente},
         success: function(risposta) {
