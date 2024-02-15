@@ -1,41 +1,57 @@
 <?php
+
 ini_set('display_errors', 1);
+
 ini_set('display_startup_errors', 1);
+
 error_reporting(E_ALL);
 session_start();
+
 use PHPMailer\PHPMailer\PHPMailer;
+
 use PHPMailer\PHPMailer\Exception;
+
 require 'PHPMailer-master/src/Exception.php';
+
 require 'PHPMailer-master/src/PHPMailer.php';
+
 require 'PHPMailer-master/src/SMTP.php';
 
 if(!isset($_GET["randomPassword"])){
-    if(isset( $_POST["utente"])){
+    if(isset($_POST["utente"])){
         $_SESSION["UTENTE"] = $_POST["utente"];
-    }
-    if(concectTODB()){
-        SendMain();
+        if(VerifyCredentials()){
+            $_SESSION["randomPassword"] = rand(100,100000);
+            $contenuto = "clicca questo link per verificare il tuo accaunt TaskBruv : https://www.taskbruv.it/PHP/send.php?randomPassword=".$_SESSION["randomPassword"];
+            $oggetto = 'verifica il tuo accaunt TaskBruv';
+            SendMain($_SESSION["UTENTE"]["email"], $contenuto, $oggetto);
+        }else{
+            echo("Email o username gia utilizzati");
+        }
     }else{
-        echo("username o password gia utilizzati");
+        echo("stai navigando nella pagina sbagliata");
     }
 }else if ($_GET["randomPassword"] == $_SESSION["randomPassword"]){
-    if(concectTODB()){
-        $sql = "INSERT INTO taskbruv.utente (mail, nome, password) VALUES ('" . $utente['email'] . "', '" . $utente['username'] . "', '" . $utente['password'] . "')";
+    if(VerifyCredentials()){
+        $sql = "INSERT INTO Sql1770397_1.utente (mail, nome, password) VALUES ('" . $_SESSION["UTENTE"]['email'] . "', '" . $_SESSION["UTENTE"]['username'] . "', '" . $_SESSION["UTENTE"]['password'] . "')";
+        $mysql = conectTODB();
         $mysql->query($sql);
+        echo("utente salvato correttamente");
         session_destroy();
     }
 }
+
 ?>
+
 <?php
-function SendMain(){
+
+function SendMain($Destinatiario, $contenuto, $oggetto,){
     $mail = new PHPMailer(TRUE);
-    $_SESSION["UTENTE"] = $_POST["utente"];
     try{
         $mail->setFrom('taskbruv@gmail.com', 'TaskBruv');
-        $mail->addAddress($_SESSION["UTENTE"]["email"], 'Destinatario');
-        $mail->Subject = 'verifica eil tuo accaunt TaskBruv';
-        $_SESSION["randomPassword"] = rand(100,100000);
-        $mail->Body = "clicca questo link per verificare il tuo accaunt TaskBruv : https://www.taskbruv.it/PHP/send.php?randomPassword=".$_SESSION["randomPassword"];
+        $mail->addAddress($Destinatiario, 'Destinatario');
+        $mail->Subject = $oggetto;
+        $mail->Body = $contenuto;
         $mail->isSMTP();
         $mail->Host = 'smtp.gmail.com';
         $mail->SMTPAuth = TRUE;
@@ -51,15 +67,20 @@ function SendMain(){
     }
 }
 ?>
+
 <?php
-function concectTODB(){
-    $username = "Sql1770397";
+
+function conectTODB(){
+    $username = "Sql1770397"; 
     $password = "DickDestroyer2005@";
     $database = "Sql1770397_1";
-    $utente = $_SESSION["UTENTE"];
-    $mysql = new mysqli("taskbruv.it", $username, $password, $database);
+    $mysql = new mysqli("89.46.111.149",$username,$password,$database);
+    return $mysql;
+}
+function VerifyCredentials(){
+    $mysql = conectTODB();
     $stmt = $mysql->prepare("SELECT * FROM Sql1770397_1.utente WHERE mail=? OR nome=?");
-    $stmt->bind_param("ss", $utente['email'], $utente['username']);
+    $stmt->bind_param("ss", $_SESSION["UTENTE"]['email'], $_SESSION["UTENTE"]['username']);
     $stmt->execute();
     $result = $stmt->get_result();
     if($result->num_rows>0){
@@ -69,3 +90,4 @@ function concectTODB(){
     }
 }
 ?>
+

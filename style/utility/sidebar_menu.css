@@ -1,8 +1,5 @@
-
 @import url(//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css);
 @import url(https://fonts.googleapis.com/css?family=Titillium+Web:300);
-
-
 
 
 #sidebar{
@@ -16,6 +13,11 @@
 }
 
 
+
+
+.logo{
+  
+}
 
 .settings {
     height:73px; 
@@ -152,7 +154,9 @@ overflow-x: hidden;
     font-family: 'Titillium Web', sans-serif;
 }
 
+.main-menu .share {
 
+}
 
 
 
