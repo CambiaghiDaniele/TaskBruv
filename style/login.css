@@ -142,3 +142,12 @@ a {
   bottom: 10px;
   font-size: 12px;
 }
+
+#alert {
+  position: absolute;
+  top: 64%;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 5px 10px 10px rgba(2, 128, 144, 0.2);
+  display: none;
+}

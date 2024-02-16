@@ -1,14 +1,20 @@
-let label = document.getElementById("messagelabel1");
+let alert = document.getElementById("alert");
 async function senddata() {
-    let username=document.getElementById("username").value;
-    username=username.replaceAll(" ", "");
-    let password=document.getElementById("password").value;
-    password=password.replaceAll(" ", "");
+    let username=document.getElementById("username");
+    let password=document.getElementById("password");
+    if (!username.value || !password.value ) {
+      alert.className = "alert alert-warning";
+      alert.style.display = 'block';
+      alert.innerHTML = "<strong>Warning!</strong> Tutti i campi sono obbligatori";
+      return false;
+    }
+    username=username.value.replaceAll(" ", "");
+    password=password.value.replaceAll(" ", "");
     $.ajax({
       url: 'https://www.taskbruv.it/PHP/login.php',
 
       type: 'POST',
-
+  
       data: {username: username, password: password,},
 
       success: function(risposta) {
@@ -16,16 +22,22 @@ async function senddata() {
           if(risposta == true){
 
           }else if(risposta == false){
-            label.textContent = "non sei registrato effettua il register";
+            alert.className = "alert alert-warning";
+            alert.style.display = 'block';
+            alert.innerHTML = "<strong>Warning!</strong> non hai efffettuato la registrazione registrati";
           }else if(risposta == null){
-            label.textContent = "disastro";
+            alert.className = "alert alert-danger";
+            alert.style.display = 'block';
+            alert.innerHTML = "<strong>Warning!</strong> disastro esistono più accaunt con lo stesso nome utente";
           }
 
       },
 
       error: function() {
 
-          console.log('Si è verificato un errore durante la richiesta AJAX');
+          lert.className = "alert alert-warning";
+          alert.style.display = 'block';
+          alert.innerHTML = "<strong>Warning!</strong> Si è verificato un errore durante la richiesta AJAX";
 
           location.href = 'index.html';
 
