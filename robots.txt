@@ -1,0 +1,9 @@
+User-agent: *
+Disallow: /
+
+Allow: /home.html
+Allow: /index.html
+Allow: /login.html
+Allow: /register.html
+Allow: /task.html
+Allow: /account/index.html
